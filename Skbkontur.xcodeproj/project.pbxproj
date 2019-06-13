@@ -7,21 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		908F030E7246CA207FF977F7 /* Pods_Skbkontur.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF754B5351B975FEB48EFD3F /* Pods_Skbkontur.framework */; };
+		925ECF2422B0DD4200CDBFA8 /* PhoneNumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925ECF2322B0DD4200CDBFA8 /* PhoneNumberCell.swift */; };
+		925ECF2622B0DD6100CDBFA8 /* BiographyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925ECF2522B0DD6100CDBFA8 /* BiographyCell.swift */; };
+		925ECF2822B0DD8700CDBFA8 /* MainInformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925ECF2722B0DD8700CDBFA8 /* MainInformationCell.swift */; };
+		925ECF2E22B0DDF700CDBFA8 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925ECF2D22B0DDF700CDBFA8 /* MainVC.swift */; };
 		92ADF48B22B0CE7B0065B8DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ADF48A22B0CE7B0065B8DA /* AppDelegate.swift */; };
-		92ADF48D22B0CE7B0065B8DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ADF48C22B0CE7B0065B8DA /* ViewController.swift */; };
 		92ADF49022B0CE7B0065B8DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92ADF48E22B0CE7B0065B8DA /* Main.storyboard */; };
 		92ADF49222B0CE7E0065B8DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92ADF49122B0CE7E0065B8DA /* Assets.xcassets */; };
 		92ADF49522B0CE7E0065B8DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92ADF49322B0CE7E0065B8DA /* LaunchScreen.storyboard */; };
+		92ADF49D22B0D34C0065B8DA /* CustomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ADF49C22B0D34C0065B8DA /* CustomVC.swift */; };
+		92ADF49F22B0D52E0065B8DA /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ADF49E22B0D52E0065B8DA /* DetailVC.swift */; };
+		92C900F022B0F101008A32B6 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C900EF22B0F101008A32B6 /* RealmModel.swift */; };
+		92C900F222B0F459008A32B6 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C900F122B0F459008A32B6 /* StorageManager.swift */; };
+		92C900F422B10A3B008A32B6 /* personModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C900F322B10A3B008A32B6 /* personModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		018996B369B74FFC8C101B07 /* Pods-Skbkontur.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Skbkontur.release.xcconfig"; path = "Target Support Files/Pods-Skbkontur/Pods-Skbkontur.release.xcconfig"; sourceTree = "<group>"; };
+		72BF06C30EA1AFDB789098FC /* Pods-Skbkontur.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Skbkontur.debug.xcconfig"; path = "Target Support Files/Pods-Skbkontur/Pods-Skbkontur.debug.xcconfig"; sourceTree = "<group>"; };
+		925ECF2322B0DD4200CDBFA8 /* PhoneNumberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberCell.swift; sourceTree = "<group>"; };
+		925ECF2522B0DD6100CDBFA8 /* BiographyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiographyCell.swift; sourceTree = "<group>"; };
+		925ECF2722B0DD8700CDBFA8 /* MainInformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInformationCell.swift; sourceTree = "<group>"; };
+		925ECF2D22B0DDF700CDBFA8 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		92ADF48722B0CE7B0065B8DA /* Skbkontur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skbkontur.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92ADF48A22B0CE7B0065B8DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		92ADF48C22B0CE7B0065B8DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		92ADF48F22B0CE7B0065B8DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92ADF49122B0CE7E0065B8DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92ADF49422B0CE7E0065B8DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92ADF49622B0CE7E0065B8DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92ADF49C22B0D34C0065B8DA /* CustomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVC.swift; sourceTree = "<group>"; };
+		92ADF49E22B0D52E0065B8DA /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		92C900EF22B0F101008A32B6 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
+		92C900F122B0F459008A32B6 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		92C900F322B10A3B008A32B6 /* personModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = personModel.swift; sourceTree = "<group>"; };
+		AF754B5351B975FEB48EFD3F /* Pods_Skbkontur.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Skbkontur.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +49,86 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				908F030E7246CA207FF977F7 /* Pods_Skbkontur.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0846F7F246B6E5B2BA7FBA67 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				72BF06C30EA1AFDB789098FC /* Pods-Skbkontur.debug.xcconfig */,
+				018996B369B74FFC8C101B07 /* Pods-Skbkontur.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		925ECF2922B0DD8F00CDBFA8 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				925ECF2C22B0DDCE00CDBFA8 /* MainVC */,
+				925ECF2B22B0DDB900CDBFA8 /* DetailVC */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		925ECF2B22B0DDB900CDBFA8 /* DetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				925ECF2722B0DD8700CDBFA8 /* MainInformationCell.swift */,
+				925ECF2322B0DD4200CDBFA8 /* PhoneNumberCell.swift */,
+				925ECF2522B0DD6100CDBFA8 /* BiographyCell.swift */,
+			);
+			path = DetailVC;
+			sourceTree = "<group>";
+		};
+		925ECF2C22B0DDCE00CDBFA8 /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				92ADF49C22B0D34C0065B8DA /* CustomVC.swift */,
+			);
+			path = MainVC;
+			sourceTree = "<group>";
+		};
+		925ECF2F22B0ED1000CDBFA8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				92C900EF22B0F101008A32B6 /* RealmModel.swift */,
+				92C900F322B10A3B008A32B6 /* personModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		925ECF3022B0ED1C00CDBFA8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				92ADF48E22B0CE7B0065B8DA /* Main.storyboard */,
+				92ADF49322B0CE7E0065B8DA /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		925ECF3122B0ED2200CDBFA8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				92ADF48A22B0CE7B0065B8DA /* AppDelegate.swift */,
+				925ECF2D22B0DDF700CDBFA8 /* MainVC.swift */,
+				92ADF49E22B0D52E0065B8DA /* DetailVC.swift */,
+				92C900F122B0F459008A32B6 /* StorageManager.swift */,
+				925ECF2922B0DD8F00CDBFA8 /* CustomCell */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		92ADF47E22B0CE7B0065B8DA = {
 			isa = PBXGroup;
 			children = (
 				92ADF48922B0CE7B0065B8DA /* Skbkontur */,
 				92ADF48822B0CE7B0065B8DA /* Products */,
+				0846F7F246B6E5B2BA7FBA67 /* Pods */,
+				D36215F9256B1A2542D61BE7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +143,21 @@
 		92ADF48922B0CE7B0065B8DA /* Skbkontur */ = {
 			isa = PBXGroup;
 			children = (
-				92ADF48A22B0CE7B0065B8DA /* AppDelegate.swift */,
-				92ADF48C22B0CE7B0065B8DA /* ViewController.swift */,
-				92ADF48E22B0CE7B0065B8DA /* Main.storyboard */,
+				925ECF2F22B0ED1000CDBFA8 /* Model */,
+				925ECF3022B0ED1C00CDBFA8 /* View */,
+				925ECF3122B0ED2200CDBFA8 /* Controller */,
 				92ADF49122B0CE7E0065B8DA /* Assets.xcassets */,
-				92ADF49322B0CE7E0065B8DA /* LaunchScreen.storyboard */,
 				92ADF49622B0CE7E0065B8DA /* Info.plist */,
 			);
 			path = Skbkontur;
+			sourceTree = "<group>";
+		};
+		D36215F9256B1A2542D61BE7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF754B5351B975FEB48EFD3F /* Pods_Skbkontur.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +167,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92ADF49922B0CE7E0065B8DA /* Build configuration list for PBXNativeTarget "Skbkontur" */;
 			buildPhases = (
+				33C787451A41936A3BFC5E36 /* [CP] Check Pods Manifest.lock */,
 				92ADF48322B0CE7B0065B8DA /* Sources */,
 				92ADF48422B0CE7B0065B8DA /* Frameworks */,
 				92ADF48522B0CE7B0065B8DA /* Resources */,
+				326AD7639D2FD07411E958DA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,13 +228,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		326AD7639D2FD07411E958DA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Skbkontur/Pods-Skbkontur-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Skbkontur/Pods-Skbkontur-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		33C787451A41936A3BFC5E36 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Skbkontur-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		92ADF48322B0CE7B0065B8DA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92ADF48D22B0CE7B0065B8DA /* ViewController.swift in Sources */,
+				92ADF49D22B0D34C0065B8DA /* CustomVC.swift in Sources */,
+				92ADF49F22B0D52E0065B8DA /* DetailVC.swift in Sources */,
+				92C900F422B10A3B008A32B6 /* personModel.swift in Sources */,
+				925ECF2422B0DD4200CDBFA8 /* PhoneNumberCell.swift in Sources */,
+				92C900F222B0F459008A32B6 /* StorageManager.swift in Sources */,
+				925ECF2822B0DD8700CDBFA8 /* MainInformationCell.swift in Sources */,
+				925ECF2E22B0DDF700CDBFA8 /* MainVC.swift in Sources */,
+				92C900F022B0F101008A32B6 /* RealmModel.swift in Sources */,
 				92ADF48B22B0CE7B0065B8DA /* AppDelegate.swift in Sources */,
+				925ECF2622B0DD6100CDBFA8 /* BiographyCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +435,7 @@
 		};
 		92ADF49A22B0CE7E0065B8DA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72BF06C30EA1AFDB789098FC /* Pods-Skbkontur.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +454,7 @@
 		};
 		92ADF49B22B0CE7E0065B8DA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 018996B369B74FFC8C101B07 /* Pods-Skbkontur.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
