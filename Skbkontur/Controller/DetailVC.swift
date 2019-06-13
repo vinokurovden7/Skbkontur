@@ -23,10 +23,12 @@ class DetailVC: UIViewController {
         
     }
     
+    //Обработчик нажатия на значок телефона
     @IBAction func phoneButton(_ sender: UIButton) {
         call()
     }
     
+    //Функция преобразования даты
     func getDate(strDate: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
@@ -35,6 +37,7 @@ class DetailVC: UIViewController {
         return formatter.string(from: date)
     }
     
+    //Обработчик нажатия на ячейку
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 1 {
             call()
@@ -43,6 +46,7 @@ class DetailVC: UIViewController {
         }
     }
     
+    //Функция для совершения вызова
     func call(){
         guard let url = URL(string: "tel://\(phoneNumber.replacingOccurrences(of: " ", with: ""))") else {return}
         if UIApplication.shared.canOpenURL(url) {
@@ -52,6 +56,7 @@ class DetailVC: UIViewController {
 
 }
 
+//Расширение для работы с таблицей
 extension DetailVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,7 +64,6 @@ extension DetailVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         
         switch indexPath.row {
         case 0:
