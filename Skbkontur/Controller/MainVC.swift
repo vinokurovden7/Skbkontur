@@ -35,6 +35,7 @@ class MainVC: UIViewController {
     
     let formatter = DateFormatter()
     
+    //Потоки для загрузки данных
     let queue1 = DispatchQueue.global(qos: .utility)
     let queue2 = DispatchQueue.global(qos: .utility)
     let queue3 = DispatchQueue.global(qos: .utility)
@@ -68,9 +69,12 @@ class MainVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Функция добавления RefreshControl
         addRefreshControl()
         
+        //Добавление на view loadingIndicator
         self.view.addSubview(self.loadingIndicator)
+        
         formatter.dateFormat = "dd.MM.yyyy"
         
         persons = realm.objects(Person.self)
@@ -163,7 +167,7 @@ class MainVC: UIViewController {
             DispatchQueue.main.async {
                 do{
                     let array: [PersonModel] = try JSONDecoder().decode([PersonModel].self, from: data)
-                    for dic : PersonModel in array {
+                    for dicionary : PersonModel in array {
                         if self.count1 < self.lastCountLoadingItems1 {
                             self.count1+=1
                             continue
@@ -175,14 +179,14 @@ class MainVC: UIViewController {
                                 return
                             }
                             
-                            self.newPerson.id = dic.id ?? ""
-                            self.newPerson.name = dic.name ?? ""
-                            self.newPerson.phone = dic.phone ?? ""
-                            self.newPerson.height = dic.height ?? 0.0
-                            self.newPerson.temperament = dic.temperament ?? ""
-                            self.newPerson.biography = dic.biography ?? ""
-                            self.newPerson.educationPeriodStart = dic.educationPeriod?.start ?? ""
-                            self.newPerson.educationPeriodEnd = dic.educationPeriod?.end ?? ""
+                            self.newPerson.id = dicionary.id ?? ""
+                            self.newPerson.name = dicionary.name ?? ""
+                            self.newPerson.phone = dicionary.phone ?? ""
+                            self.newPerson.height = dicionary.height ?? 0.0
+                            self.newPerson.temperament = dicionary.temperament ?? ""
+                            self.newPerson.biography = dicionary.biography ?? ""
+                            self.newPerson.educationPeriodStart = dicionary.educationPeriod?.start ?? ""
+                            self.newPerson.educationPeriodEnd = dicionary.educationPeriod?.end ?? ""
                             
                             StorageManage.saveObjectsPerson(self.newPerson)
                             self.count1 += 1
@@ -219,7 +223,7 @@ class MainVC: UIViewController {
             DispatchQueue.main.async {
                 do{
                     let array: [PersonModel] = try JSONDecoder().decode([PersonModel].self, from: data)
-                    for dic : PersonModel in array {
+                    for dicionary : PersonModel in array {
                         if self.count2 < self.lastCountLoadingItems2 {
                             self.count2+=1
                             continue
@@ -231,14 +235,14 @@ class MainVC: UIViewController {
                                 return
                             }
                             
-                            self.newPerson.id = dic.id ?? ""
-                            self.newPerson.name = dic.name ?? ""
-                            self.newPerson.phone = dic.phone ?? ""
-                            self.newPerson.height = dic.height ?? 0.0
-                            self.newPerson.temperament = dic.temperament ?? ""
-                            self.newPerson.biography = dic.biography ?? ""
-                            self.newPerson.educationPeriodStart = dic.educationPeriod?.start ?? ""
-                            self.newPerson.educationPeriodEnd = dic.educationPeriod?.end ?? ""
+                            self.newPerson.id = dicionary.id ?? ""
+                            self.newPerson.name = dicionary.name ?? ""
+                            self.newPerson.phone = dicionary.phone ?? ""
+                            self.newPerson.height = dicionary.height ?? 0.0
+                            self.newPerson.temperament = dicionary.temperament ?? ""
+                            self.newPerson.biography = dicionary.biography ?? ""
+                            self.newPerson.educationPeriodStart = dicionary.educationPeriod?.start ?? ""
+                            self.newPerson.educationPeriodEnd = dicionary.educationPeriod?.end ?? ""
                             
                             StorageManage.saveObjectsPerson(self.newPerson)
                             self.count2 += 1
@@ -275,7 +279,7 @@ class MainVC: UIViewController {
             DispatchQueue.main.async {
                 do{
                     let array: [PersonModel] = try JSONDecoder().decode([PersonModel].self, from: data)
-                    for dic : PersonModel in array {
+                    for dicionary : PersonModel in array {
                         if self.count3 < self.lastCountLoadingItems3 {
                             self.count3+=1
                             continue
@@ -287,14 +291,14 @@ class MainVC: UIViewController {
                                 return
                             }
                             
-                            self.newPerson.id = dic.id ?? ""
-                            self.newPerson.name = dic.name ?? ""
-                            self.newPerson.phone = dic.phone ?? ""
-                            self.newPerson.height = dic.height ?? 0.0
-                            self.newPerson.temperament = dic.temperament ?? ""
-                            self.newPerson.biography = dic.biography ?? ""
-                            self.newPerson.educationPeriodStart = dic.educationPeriod?.start ?? ""
-                            self.newPerson.educationPeriodEnd = dic.educationPeriod?.end ?? ""
+                            self.newPerson.id = dicionary.id ?? ""
+                            self.newPerson.name = dicionary.name ?? ""
+                            self.newPerson.phone = dicionary.phone ?? ""
+                            self.newPerson.height = dicionary.height ?? 0.0
+                            self.newPerson.temperament = dicionary.temperament ?? ""
+                            self.newPerson.biography = dicionary.biography ?? ""
+                            self.newPerson.educationPeriodStart = dicionary.educationPeriod?.start ?? ""
+                            self.newPerson.educationPeriodEnd = dicionary.educationPeriod?.end ?? ""
                             
                             StorageManage.saveObjectsPerson(self.newPerson)
                             self.count3 += 1
