@@ -320,6 +320,7 @@ class MainVC: UIViewController {
         
     }
     
+    //Обработчик окончания загруженного списка
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let lastVisibleIndexPath = tableView.indexPathsForVisibleRows?.last {
             if indexPath == lastVisibleIndexPath {
@@ -371,6 +372,7 @@ class MainVC: UIViewController {
         refreshControl.attributedTitle = NSAttributedString(string: "Обновление данных ...")
     }
     
+    //Селектор refreshList
     @objc func refreshList(){
         DispatchQueue.main.async {
             self.lastCountLoadingItems1 = 0
@@ -394,6 +396,7 @@ class MainVC: UIViewController {
         
     }
     
+    //Функция показа сообщения с ошибкой
     func showError(){
         self.errorView.isHidden = false
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5), execute: {
