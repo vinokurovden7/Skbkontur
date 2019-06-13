@@ -1,0 +1,6 @@
+framework module Pods_Skbkontur {
+  umbrella header "Pods-Skbkontur-umbrella.h"
+
+  export *
+  module * { export * }
+}
