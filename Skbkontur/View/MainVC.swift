@@ -14,6 +14,8 @@ class MainVC: UIViewController {
     @IBOutlet weak var errorView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
+    static var countLoadUrls = 0
+    
     //Поиск
     private let searchController = UISearchController(searchResultsController: nil)
     private var searchBaIsEmpty: Bool {
@@ -57,34 +59,39 @@ class MainVC: UIViewController {
     }
     
     private func getData(loader: Bool, reload: Bool){
+        MainVC.countLoadUrls = 0
         if loader {
             showLoader()
         }
         
         self.viewModel?.fetchPerson(url: urls, reload: reload) { [self] loads in
-            self.hideLoader()
+            if MainVC.countLoadUrls == self.urls.count - 1 {
+                self.hideLoader()
+                DispatchQueue.main.async {
+                    self.refreshControl.endRefreshing()
+                }
+            }
             if loads {
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
-            }
-            DispatchQueue.main.async {
-                self.refreshControl.endRefreshing()
             }
         }
     }
     
     //Обновление записей
     func addRefreshControl(){
-        tableView.addSubview(refreshControl)
-        refreshControl.addTarget(self, action: #selector(refreshList), for: .valueChanged)
-        refreshControl.tintColor = UIColor.black
-        refreshControl.attributedTitle = NSAttributedString(string: "Обновление данных ...")
+        DispatchQueue.main.async {
+            self.tableView.addSubview(self.refreshControl)
+            self.refreshControl.addTarget(self, action: #selector(self.refreshList), for: .valueChanged)
+            self.refreshControl.tintColor = UIColor.black
+            self.refreshControl.attributedTitle = NSAttributedString(string: "Обновление данных ...")
+        }
     }
     
     //Селектор refreshList
     @objc func refreshList(){
-        getData(loader: false, reload: true)
+       getData(loader: false, reload: true)
     }
     
     //Функция показа лоадера

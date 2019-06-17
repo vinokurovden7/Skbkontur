@@ -10,7 +10,8 @@ import Foundation
 import RealmSwift
 
 
-class ViewModel: TableViewViewModelType {    
+class ViewModel: TableViewViewModelType {
+   
 
     private let realm = try! Realm()
     //private var persons: [Person]?
@@ -22,21 +23,17 @@ class ViewModel: TableViewViewModelType {
     private var isFiltering: Bool = false
     
     func fetchPerson(url: [String], reload: Bool, completion: @escaping(Bool) -> ()){
+        MainVC.countLoadUrls = 0
         for i in url {
             let loadFactory = LoadFactory.produseLoad()
-            loadFactory.getData(url: i, reload: reload) { loads in
+            loadFactory.getData(url: i, reload: reload) { loads  in
                 completion(loads)
             }
         }
-        
-//        load.getData(urls: url) {
-//        //self.persons = self.realm.objects(Person.self)
-//            completion()
-//        }
     }
     
     func numberOfRows() -> Int {
-        persons = realm.objects(Person.self)
+        persons = realm.objects(Person.self).sorted(byKeyPath: "name")
         if isFiltering {
             return filteredPersons?.count ?? 0
         }
@@ -46,9 +43,9 @@ class ViewModel: TableViewViewModelType {
     func cellViewModel(forIndexPath indexPath: IndexPath) -> TableViewCellViewModelType? {
         var person = Person()
         if isFiltering {
-            person = filteredPersons!.sorted(byKeyPath: "name")[indexPath.row]
+            person = filteredPersons![indexPath.row]
         } else {
-            person = persons!.sorted(byKeyPath: "name")[indexPath.row]
+            person = persons![indexPath.row]
         }
         
         return TableViewCellViewModel(person: person)
@@ -57,9 +54,9 @@ class ViewModel: TableViewViewModelType {
     func viewModelForSelectedRow() -> DetailViewModelType? {
         guard let selectedIndexPath = selectedIndexPath else {return nil}
         if isFiltering {
-            return DetailViewModel(person: filteredPersons!.sorted(byKeyPath: "name")[selectedIndexPath.row])
+            return DetailViewModel(person: filteredPersons![selectedIndexPath.row])
         }
-        return DetailViewModel(person: persons!.sorted(byKeyPath: "name")[selectedIndexPath.row])
+        return DetailViewModel(person: persons![selectedIndexPath.row])
     }
     
     func selectRow(atIndexPath indexPath: IndexPath) {
@@ -68,11 +65,11 @@ class ViewModel: TableViewViewModelType {
     
     func filteredPersons(searchText: String) {
         isFiltering = searchText.count > 0
-        self.filteredPersons = persons?.sorted(byKeyPath: "name").filter("name CONTAINS[c] %@ OR phone CONTAINS[c] %@", searchText ,searchText)
+        self.filteredPersons = persons?.filter("name CONTAINS[c] %@ OR phone CONTAINS[c] %@", searchText ,searchText)
     }
     
     func getCountPerson() -> Int {
-        persons = realm.objects(Person.self)
+        persons = realm.objects(Person.self).sorted(byKeyPath: "name")
         if isFiltering {
             return filteredPersons?.count ?? 0
         }

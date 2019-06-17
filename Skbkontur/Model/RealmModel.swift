@@ -25,6 +25,7 @@ class Person: Object {
     
     convenience init(id: String, name:String, phone:String, height:Float, biography:String, temperament:String, educationPeriodStart:String, educationPeriodEnd: String){
         self.init()
+        self.id = id
         self.name = name
         self.phone = phone
         self.height = height
@@ -38,7 +39,13 @@ class Person: Object {
 }
 
 class LastStart: Object {
+    
+    @objc dynamic var id = ""
     @objc dynamic var lastDateTimeStart: Date = Date()
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
     
     convenience init(lastDateTimeStart: Date) {
         self.init()

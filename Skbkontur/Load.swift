@@ -26,8 +26,7 @@ class Load {
         viewModel = ViewModel()
         //Информация о загруженных данных 1 источника
         guard let viewModel = self.viewModel else {return}
-        var lastCountLoad = viewModel.getCountPerson()
-        if reload { lastCountLoad = 0 }
+        let lastCountLoad = viewModel.getCountPerson()
         var count = 0
         let countLoad = lastCountLoad + 20
         DispatchQueue.global(qos: .utility).async {
@@ -35,9 +34,8 @@ class Load {
                 do{
                     guard let data = data else {return}
                     let array: [PersonModel] = try JSONDecoder().decode([PersonModel].self, from: data)
-                    //if array.count == lastCountLoad { completion(false); return}
                     for dicionary : PersonModel in array {
-                        if count < lastCountLoad {
+                        if count < lastCountLoad  && !reload {
                             count+=1
                             continue
                         } else {

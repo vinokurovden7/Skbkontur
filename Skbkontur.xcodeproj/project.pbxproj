@@ -135,7 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				92ADF48A22B0CE7B0065B8DA /* AppDelegate.swift */,
-				92C900F122B0F459008A32B6 /* StorageManager.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -168,6 +167,7 @@
 				925ECF3122B0ED2200CDBFA8 /* Controller */,
 				92ADF49122B0CE7E0065B8DA /* Assets.xcassets */,
 				92ADF49622B0CE7E0065B8DA /* Info.plist */,
+				92C900F122B0F459008A32B6 /* StorageManager.swift */,
 				92C9012322B4F35D008A32B6 /* Load.swift */,
 			);
 			path = Skbkontur;

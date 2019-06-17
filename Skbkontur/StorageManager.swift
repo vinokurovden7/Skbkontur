@@ -21,34 +21,22 @@ class StorageManage{
                     pers.educationPeriodEnd = person.educationPeriodEnd
                     pers.educationPeriodStart = person.educationPeriodStart
                     pers.height = person.height
+                    pers.temperament = person.temperament
                     pers.id = person.id
                     pers.phone = person.phone
                     realm.add(pers, update: true)
-                    completion()
                 }
             }
+            completion()
+            MainVC.countLoadUrls+=1
         }
     }
     
     static func saveObjectLastDateTime(_ lastDateTime: LastStart){
-        let realm = try! Realm()
-        try! realm.write {
-            realm.add(lastDateTime)
-        }
-    }
-    
-    static func removePersonData(_ person: Person){
-        let realm = try! Realm()
-        try! realm.write {
-            realm.delete(person)
-        }
-    }
-    
-    static func removeAllData(){
         DispatchQueue.global(qos: .utility).async {
             let realm = try! Realm()
             try! realm.write {
-                realm.deleteAll()
+                realm.add(lastDateTime)
             }
         }
     }
