@@ -14,4 +14,13 @@ class MainInformationCell: UITableViewCell {
     @IBOutlet weak var educationPeriodLabel: UILabel!
     @IBOutlet weak var temperamentLabel: UILabel!
     
+    weak var viewModel: DetailViewCellViewModelType? {
+        willSet(viewModel) {
+            guard let viewModel = viewModel else {return}
+            nameLabel.text = viewModel.name
+            educationPeriodLabel.text = viewModel.dateEducation
+            temperamentLabel.text = viewModel.temperament
+        }
+    }
+    
 }

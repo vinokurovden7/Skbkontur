@@ -72,7 +72,6 @@
                                             <outlet property="nameLable" destination="dO7-8e-8nV" id="bmJ-8w-yG5"/>
                                             <outlet property="phoneNumberLabel" destination="vjj-XN-KIt" id="RXq-AQ-Kwe"/>
                                             <outlet property="temperamentLabel" destination="pW9-1M-RD7" id="XoA-Rm-7iU"/>
-                                            <segue destination="FII-IG-sar" kind="show" identifier="detail" id="W9a-bn-Wy2"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -120,6 +119,7 @@
                     <connections>
                         <outlet property="errorView" destination="rnj-gn-niJ" id="9aW-4N-AbD"/>
                         <outlet property="tableView" destination="zZJ-3Q-Pj8" id="xk0-S2-55W"/>
+                        <segue destination="FII-IG-sar" kind="show" identifier="detail" id="JQc-vj-ZlZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

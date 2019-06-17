@@ -9,16 +9,16 @@
 import Foundation
 
 struct PersonModel: Decodable {
-    let id: String?
-    let name: String?
-    let phone: String?
-    let height: Float?
-    let biography: String?
-    let temperament: String?
-    let educationPeriod: EducationModel?
+    let id: String
+    let name: String
+    let phone: String
+    let height: Float
+    let biography: String
+    let temperament: String
+    let educationPeriod: EducationModel
 }
 
 struct EducationModel: Decodable {
-    let start: String?
-    let end: String?
+    let start: String
+    let end: String
 }

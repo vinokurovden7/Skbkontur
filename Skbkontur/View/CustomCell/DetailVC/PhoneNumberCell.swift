@@ -12,4 +12,11 @@ class PhoneNumberCell: UITableViewCell {
 
     @IBOutlet weak var phoneButton: UIButton!
     @IBOutlet weak var phoneLabel: UILabel!
+    
+    weak var viewModel: DetailViewCellViewModelType? {
+        willSet(viewModel) {
+            guard let viewModel = viewModel else {return}
+            phoneLabel.text = viewModel.phone
+        }
+    }
 }

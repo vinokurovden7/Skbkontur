@@ -12,4 +12,10 @@ class BiographyCell: UITableViewCell {
 
     @IBOutlet weak var biographyLabel: UILabel!
     
+    weak var viewModel: DetailViewCellViewModelType? {
+        willSet(viewModel) {
+            guard let viewModel = viewModel else {return}
+            biographyLabel.text = viewModel.biography
+        }
+    }
 }

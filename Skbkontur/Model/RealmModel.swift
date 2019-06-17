@@ -19,6 +19,10 @@ class Person: Object {
     @objc dynamic var educationPeriodStart: String = ""
     @objc dynamic var educationPeriodEnd: String = ""
     
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
     convenience init(id: String, name:String, phone:String, height:Float, biography:String, temperament:String, educationPeriodStart:String, educationPeriodEnd: String){
         self.init()
         self.name = name
