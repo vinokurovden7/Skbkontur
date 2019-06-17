@@ -91,7 +91,8 @@ class MainVC: UIViewController {
     
     //Селектор refreshList
     @objc func refreshList(){
-       getData(loader: false, reload: true)
+        hideLoader()
+        getData(loader: false, reload: true)
     }
     
     //Функция показа лоадера
