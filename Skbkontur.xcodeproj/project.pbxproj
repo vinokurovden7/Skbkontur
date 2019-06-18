@@ -194,11 +194,11 @@
 				925ECF2F22B0ED1000CDBFA8 /* Model */,
 				925ECF3022B0ED1C00CDBFA8 /* View */,
 				925ECF3122B0ED2200CDBFA8 /* Controller */,
-				92ADF49122B0CE7E0065B8DA /* Assets.xcassets */,
-				92ADF49622B0CE7E0065B8DA /* Info.plist */,
 				925CAC0A22B8E71C007C6473 /* Realm */,
 				925CAC0B22B8E733007C6473 /* Network */,
 				925CAC0C22B8E749007C6473 /* HelpClasses */,
+				92ADF49122B0CE7E0065B8DA /* Assets.xcassets */,
+				92ADF49622B0CE7E0065B8DA /* Info.plist */,
 			);
 			path = Skbkontur;
 			sourceTree = "<group>";
