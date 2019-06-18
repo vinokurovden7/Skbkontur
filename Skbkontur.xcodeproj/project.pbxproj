@@ -87,6 +87,31 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		925CAC0A22B8E71C007C6473 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				92C900F122B0F459008A32B6 /* StorageManager.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		925CAC0B22B8E733007C6473 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				92C9012322B4F35D008A32B6 /* Load.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		925CAC0C22B8E749007C6473 /* HelpClasses */ = {
+			isa = PBXGroup;
+			children = (
+				925CAC0622B8B2DC007C6473 /* LoadFactory.swift */,
+				925CAC0822B8B355007C6473 /* GlobalFunc.swift */,
+			);
+			path = HelpClasses;
+			sourceTree = "<group>";
+		};
 		925ECF2922B0DD8F00CDBFA8 /* CustomCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,10 +196,9 @@
 				925ECF3122B0ED2200CDBFA8 /* Controller */,
 				92ADF49122B0CE7E0065B8DA /* Assets.xcassets */,
 				92ADF49622B0CE7E0065B8DA /* Info.plist */,
-				92C900F122B0F459008A32B6 /* StorageManager.swift */,
-				92C9012322B4F35D008A32B6 /* Load.swift */,
-				925CAC0622B8B2DC007C6473 /* LoadFactory.swift */,
-				925CAC0822B8B355007C6473 /* GlobalFunc.swift */,
+				925CAC0A22B8E71C007C6473 /* Realm */,
+				925CAC0B22B8E733007C6473 /* Network */,
+				925CAC0C22B8E749007C6473 /* HelpClasses */,
 			);
 			path = Skbkontur;
 			sourceTree = "<group>";
