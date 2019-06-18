@@ -38,7 +38,7 @@ class Person: Object {
     
 }
 
-class LastStart: Object {
+class LastLoadDate: Object {
     
     @objc dynamic var id = ""
     @objc dynamic var lastDateTimeStart: Date = Date()

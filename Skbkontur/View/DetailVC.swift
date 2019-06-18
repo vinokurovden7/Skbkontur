@@ -61,7 +61,6 @@ extension DetailVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let viewModel = viewModel else {return}
         viewModel.selectRow(atIndexPath: indexPath)
-        GlobalFunc.call(phone: viewModel.getPersonPhone())
     }
     
 }

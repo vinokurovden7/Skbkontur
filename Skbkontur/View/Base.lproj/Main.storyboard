@@ -83,8 +83,8 @@
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rnj-gn-niJ">
                                 <rect key="frame" x="30" y="458" width="260" height="70"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нет подключения к сети" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2z-6q-0Sp">
-                                        <rect key="frame" x="32.5" y="24.5" width="195.5" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нет подключения к сети" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="o2z-6q-0Sp">
+                                        <rect key="frame" x="8" y="24.5" width="244" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -93,6 +93,8 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.67524614726027399" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="o2z-6q-0Sp" firstAttribute="centerX" secondItem="rnj-gn-niJ" secondAttribute="centerX" id="DH4-v3-oPc"/>
+                                    <constraint firstAttribute="trailing" secondItem="o2z-6q-0Sp" secondAttribute="trailing" constant="8" id="ROW-oz-moA"/>
+                                    <constraint firstItem="o2z-6q-0Sp" firstAttribute="leading" secondItem="rnj-gn-niJ" secondAttribute="leading" constant="8" id="bWk-O7-Lha"/>
                                     <constraint firstAttribute="height" constant="70" id="f5L-GD-JYr"/>
                                     <constraint firstItem="o2z-6q-0Sp" firstAttribute="centerY" secondItem="rnj-gn-niJ" secondAttribute="centerY" id="hRv-m0-Zdv"/>
                                 </constraints>

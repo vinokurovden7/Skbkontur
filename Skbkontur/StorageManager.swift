@@ -10,6 +10,7 @@ import RealmSwift
 
 class StorageManage{
     
+    //Функция записи в Realm массива типа Person
     static func saveObjectsPerson(_ persons: [Person], completion: @escaping ()->()){
         DispatchQueue.global(qos: .userInteractive).async {
             let realm = try! Realm()
@@ -32,7 +33,8 @@ class StorageManage{
         }
     }
     
-    static func saveObjectLastDateTime(_ lastDateTime: LastStart){
+    //Функция записи в Realm объекта типа LastLoadDate
+    static func saveObjectLastDateTime(_ lastDateTime: LastLoadDate){
         DispatchQueue.global(qos: .utility).async {
             let realm = try! Realm()
             try! realm.write {

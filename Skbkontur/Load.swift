@@ -15,7 +15,8 @@ class Load {
     private var viewModel: TableViewViewModelType?
     private var persons: [Person] = []
     
-    func getData(url: String, completion: @escaping (Bool) -> ()) {
+    //Функция получения данных из url
+    func getDataPerson(url: String, completion: @escaping (Bool) -> ()) {
         let session = URLSession.shared
         DispatchQueue.global(qos: .utility).async {
             session.dataTask(with: URL(string: url)!) { (data, response, error) in
@@ -36,6 +37,7 @@ class Load {
                         self.persons.append(self.newPerson)
                         self.newPerson = Person()
                     }
+                    //Запись полученного массива в Realm
                     StorageManage.saveObjectsPerson(self.persons){
                         completion(false)
                     }

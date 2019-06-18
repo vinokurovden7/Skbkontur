@@ -12,7 +12,6 @@ protocol DetailViewModelType {
     func numberOfRows() -> Int
     func cellViewModel(forIndexPath indexPath: IndexPath) -> DetailViewCellViewModelType?
     
-    func viewModelForSelectedRow()
     func selectRow(atIndexPath indexPath: IndexPath)
     
     func getPersonPhone() -> String

@@ -54,6 +54,7 @@ class MainVC: UIViewController {
         checkLastLoad()
     }
     
+    //Функция загрузки данных
     private func getData(loader: Bool){
         guard let viewModel = self.viewModel else {return}
         MainVC.countLoadUrls = 0
@@ -64,6 +65,7 @@ class MainVC: UIViewController {
             if error {
                 self.showError()
             }
+            //Если данные со всех url загружены
             if MainVC.countLoadUrls == GlobalFunc.urls.count - 1 {
                 self.hideLoader()
                 DispatchQueue.main.async {
@@ -86,7 +88,7 @@ class MainVC: UIViewController {
         }
     }
     
-    //Обновление записей
+    //Добавление RefreshControl
     func addRefreshControl(){
         DispatchQueue.main.async {
             self.tableView.addSubview(self.refreshControl)
@@ -172,18 +174,6 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         
         viewModel.selectRow(atIndexPath: indexPath)
         performSegue(withIdentifier: "detail", sender: nil)
-    }
-    
-    //Обработчик окончания загруженного списка
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if let lastVisibleIndexPath = tableView.indexPathsForVisibleRows?.last {
-            if indexPath == lastVisibleIndexPath {
-                guard let viewModel = self.viewModel else {return}
-                if indexPath.row + 10 >= viewModel.getCountPerson() && !isFiltering && !loadingIndicator.isAnimating {
-                    getData(loader: true)
-                }
-            }
-        }
     }
     
 }

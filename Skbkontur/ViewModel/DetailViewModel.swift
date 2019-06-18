@@ -17,25 +17,24 @@ class DetailViewModel: DetailViewModelType{
         self.person = person
     }
     
+    //Функция получения ячейки
     func cellViewModel(forIndexPath indexPath: IndexPath) -> DetailViewCellViewModelType? {
         return DetailViewCellViewModel(person: person)
     }
     
+    //Функция получения количества строк
     func numberOfRows() -> Int {
         return 3
     }
     
-    func viewModelForSelectedRow() {
-        guard let selectedIndexPath = selectedIndexPath else {return}
-        if selectedIndexPath.row == 1 {
+    //Функция получения IndexPath выбранной ячейки
+    func selectRow(atIndexPath indexPath: IndexPath) {
+        if indexPath.row == 1 {
             GlobalFunc.call(phone: person.phone)
         }
     }
     
-    func selectRow(atIndexPath indexPath: IndexPath) {
-        self.selectedIndexPath = indexPath
-    }
-    
+    //Функция получения номера телефона
     func getPersonPhone() -> String {
         return person.phone
     }

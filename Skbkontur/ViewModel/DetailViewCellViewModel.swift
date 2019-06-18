@@ -16,7 +16,7 @@ class DetailViewCellViewModel: DetailViewCellViewModelType{
         formatter.dateFormat = "dd.MM.yyyy"
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.locale = Locale(identifier: "ru_RU")
         let date = dateFormatter.date(from:strDate)
         return formatter.string(from: date ?? Date())
     }
