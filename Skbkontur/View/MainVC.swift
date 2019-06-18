@@ -70,8 +70,8 @@ class MainVC: UIViewController {
                 self.hideLoader()
                 DispatchQueue.main.async {
                     self.refreshControl.endRefreshing()
-                    viewModel.setLastLoad()
                 }
+                viewModel.setLastLoad()
             }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
