@@ -13,7 +13,7 @@ protocol TableViewViewModelType {
     
     func filteredPersons(searchText: String)
     
-    func fetchPerson(url: [String], completion: @escaping ()->())
+    func fetchPerson(url: [String], completion: @escaping (Bool)->())
     
     func numberOfRows() -> Int
     func cellViewModel(forIndexPath indexPath: IndexPath) -> TableViewCellViewModelType?
@@ -22,4 +22,7 @@ protocol TableViewViewModelType {
     func selectRow(atIndexPath indexPath: IndexPath)
     
     func getCountPerson() -> Int
+    
+    func checkLastLoad() -> Bool
+    func setLastLoad()
 }

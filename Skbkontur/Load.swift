@@ -15,7 +15,7 @@ class Load {
     private var viewModel: TableViewViewModelType?
     private var persons: [Person] = []
     
-    func getData(url: String, completion: @escaping () -> ()) {
+    func getData(url: String, completion: @escaping (Bool) -> ()) {
         let session = URLSession.shared
         DispatchQueue.global(qos: .utility).async {
             session.dataTask(with: URL(string: url)!) { (data, response, error) in
@@ -37,10 +37,12 @@ class Load {
                         self.newPerson = Person()
                     }
                     StorageManage.saveObjectsPerson(self.persons){
-                        completion()
+                        completion(false)
                     }
                     
                 } catch let error{
+                    MainVC.countLoadUrls+=1
+                    completion(true)
                     print(error)
                 }
             }.resume()

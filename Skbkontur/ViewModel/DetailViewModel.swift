@@ -39,12 +39,4 @@ class DetailViewModel: DetailViewModelType{
     func getPersonPhone() -> String {
         return person.phone
     }
-    
-//    //Функция для совершения вызова
-//    public func call(){
-//        guard let url = URL(string: "tel://\(person.phone.replacingOccurrences(of: " ", with: ""))") else {return}
-//        if UIApplication.shared.canOpenURL(url) {
-//            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-//        }
-//    }
 }

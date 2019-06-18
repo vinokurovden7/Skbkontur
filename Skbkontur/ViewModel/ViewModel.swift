@@ -15,16 +15,17 @@ class ViewModel: TableViewViewModelType {
     private let realm = try! Realm()
     private var persons: Results<Person>!
     private var filteredPersons: Results<Person>!
+    private var lastLoadDate: Results<LastStart>!
     private var selectedIndexPath: IndexPath?
     private var newPerson = Person()
     private var isFiltering: Bool = false
     
-    func fetchPerson(url: [String], completion: @escaping() -> ()){
+    func fetchPerson(url: [String], completion: @escaping(Bool) -> ()){
         MainVC.countLoadUrls = 0
         for i in url {
             let loadFactory = LoadFactory.produseLoad()
-            loadFactory.getData(url: i) {
-                completion()
+            loadFactory.getData(url: i) { error in
+                completion(error)
             }
         }
     }
@@ -71,5 +72,21 @@ class ViewModel: TableViewViewModelType {
             return filteredPersons?.count ?? 0
         }
         return persons?.count ?? 0
+    }
+    
+    func checkLastLoad() -> Bool {
+        let lastLoadDate = realm.objects(LastStart.self)
+        if lastLoadDate.isEmpty {
+            return true
+        } else {
+            return -(lastLoadDate.last!.lastDateTimeStart.timeIntervalSince(Date()) / 60) > 1
+        }
+    }
+    
+    func setLastLoad() {
+        let loadDate = LastStart()
+        loadDate.id = "1"
+        loadDate.lastDateTimeStart = Date()
+        StorageManage.saveObjectLastDateTime(loadDate)
     }
 }

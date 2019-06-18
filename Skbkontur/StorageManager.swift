@@ -36,7 +36,7 @@ class StorageManage{
         DispatchQueue.global(qos: .utility).async {
             let realm = try! Realm()
             try! realm.write {
-                realm.add(lastDateTime)
+                realm.add(lastDateTime,update: true)
             }
         }
     }

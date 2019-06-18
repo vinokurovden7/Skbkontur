@@ -51,25 +51,38 @@ class MainVC: UIViewController {
         self.view.addSubview(self.loadingIndicator)
         viewModel = ViewModel()
         addRefreshControl()
-        getData(loader: true)
+        checkLastLoad()
     }
     
     private func getData(loader: Bool){
+        guard let viewModel = self.viewModel else {return}
         MainVC.countLoadUrls = 0
         if loader {
             showLoader()
         }
-        self.viewModel?.fetchPerson(url: GlobalFunc.urls) {
+        viewModel.fetchPerson(url: GlobalFunc.urls) { error in
+            if error {
+                self.showError()
+            }
             if MainVC.countLoadUrls == GlobalFunc.urls.count - 1 {
                 self.hideLoader()
                 DispatchQueue.main.async {
                     self.refreshControl.endRefreshing()
                     self.tableView.reloadData()
+                    viewModel.setLastLoad()
                 }
             }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
+        }
+    }
+    
+    //Функция проверки даты последней загрузки данных
+    private func checkLastLoad(){
+        guard let viewModel = self.viewModel else {return}
+        if viewModel.checkLastLoad() {
+            getData(loader: true)
         }
     }
     
@@ -83,7 +96,7 @@ class MainVC: UIViewController {
         }
     }
     
-    //Селектор refreshList
+    //Функция при срабатывании refreshList
     @objc func refreshList(){
         if !isFiltering && !loadingIndicator.isAnimating {
             getData(loader: false)
@@ -123,6 +136,16 @@ class MainVC: UIViewController {
             }
         }
     }
+    
+    //Функция показа сообщения с ошибкой
+    func showError(){
+        DispatchQueue.main.async {
+            self.errorView.isHidden = false
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5), execute: {
+            self.errorView.isHidden = true
+        })
+    }
 
 }
 
@@ -130,7 +153,8 @@ class MainVC: UIViewController {
 extension MainVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.numberOfRows() ?? 0
+        guard let viewModel = viewModel else {return 0}
+        return viewModel.numberOfRows()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
