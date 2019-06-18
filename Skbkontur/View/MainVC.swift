@@ -26,10 +26,6 @@ class MainVC: UIViewController {
         return searchController.isActive && !searchBaIsEmpty
     }
     
-    private let urls = ["https://raw.githubusercontent.com/SkbkonturMobile/mobile-test-ios/master/json/generated-01.json",
-                    "https://raw.githubusercontent.com/SkbkonturMobile/mobile-test-ios/master/json/generated-02.json",
-                    "https://raw.githubusercontent.com/SkbkonturMobile/mobile-test-ios/master/json/generated-03.json"]
-    
     private var viewModel: TableViewViewModelType?
     //Объявление индикатора загрузки
     private lazy var loadingIndicator: UIActivityIndicatorView = {
@@ -55,26 +51,24 @@ class MainVC: UIViewController {
         self.view.addSubview(self.loadingIndicator)
         viewModel = ViewModel()
         addRefreshControl()
-        getData(loader: true, reload: false)
+        getData(loader: true)
     }
     
-    private func getData(loader: Bool, reload: Bool){
+    private func getData(loader: Bool){
         MainVC.countLoadUrls = 0
         if loader {
             showLoader()
         }
-        
-        self.viewModel?.fetchPerson(url: urls, reload: reload) { [self] loads in
-            if MainVC.countLoadUrls == self.urls.count - 1 {
+        self.viewModel?.fetchPerson(url: GlobalFunc.urls) {
+            if MainVC.countLoadUrls == GlobalFunc.urls.count - 1 {
                 self.hideLoader()
                 DispatchQueue.main.async {
                     self.refreshControl.endRefreshing()
-                }
-            }
-            if loads {
-                DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
+            }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
         }
     }
@@ -91,8 +85,13 @@ class MainVC: UIViewController {
     
     //Селектор refreshList
     @objc func refreshList(){
-        hideLoader()
-        getData(loader: false, reload: true)
+        if !isFiltering && !loadingIndicator.isAnimating {
+            getData(loader: false)
+        } else {
+            DispatchQueue.main.async {
+                self.refreshControl.endRefreshing()
+            }
+        }
     }
     
     //Функция показа лоадера
@@ -114,9 +113,10 @@ class MainVC: UIViewController {
         }
     }
     
+    //Обработчик перехода
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifire = segue.identifier, let viewModel = viewModel else {return}
-        
+
         if identifire == "detail" {
             if let dvc = segue.destination as? DetailVC {
                 dvc.viewModel = viewModel.viewModelForSelectedRow()
@@ -155,8 +155,8 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         if let lastVisibleIndexPath = tableView.indexPathsForVisibleRows?.last {
             if indexPath == lastVisibleIndexPath {
                 guard let viewModel = self.viewModel else {return}
-                if indexPath.row + 10 >= viewModel.getCountPerson() && !isFiltering {
-                    getData(loader: true, reload: false)
+                if indexPath.row + 10 >= viewModel.getCountPerson() && !isFiltering && !loadingIndicator.isAnimating {
+                    getData(loader: true)
                 }
             }
         }

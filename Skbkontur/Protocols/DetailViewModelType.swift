@@ -14,5 +14,6 @@ protocol DetailViewModelType {
     
     func viewModelForSelectedRow()
     func selectRow(atIndexPath indexPath: IndexPath)
-    func call()
+    
+    func getPersonPhone() -> String
 }

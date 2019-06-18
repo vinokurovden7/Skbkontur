@@ -11,23 +11,20 @@ import RealmSwift
 
 
 class ViewModel: TableViewViewModelType {
-   
 
     private let realm = try! Realm()
-    //private var persons: [Person]?
     private var persons: Results<Person>!
     private var filteredPersons: Results<Person>!
-    //private let load = Load()
     private var selectedIndexPath: IndexPath?
     private var newPerson = Person()
     private var isFiltering: Bool = false
     
-    func fetchPerson(url: [String], reload: Bool, completion: @escaping(Bool) -> ()){
+    func fetchPerson(url: [String], completion: @escaping() -> ()){
         MainVC.countLoadUrls = 0
         for i in url {
             let loadFactory = LoadFactory.produseLoad()
-            loadFactory.getData(url: i, reload: reload) { loads  in
-                completion(loads)
+            loadFactory.getData(url: i) {
+                completion()
             }
         }
     }

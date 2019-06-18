@@ -11,7 +11,7 @@ import RealmSwift
 class StorageManage{
     
     static func saveObjectsPerson(_ persons: [Person], completion: @escaping ()->()){
-        DispatchQueue.global(qos: .utility).async {
+        DispatchQueue.global(qos: .userInteractive).async {
             let realm = try! Realm()
             for person in persons {
                 let pers = Person()

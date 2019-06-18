@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		908F030E7246CA207FF977F7 /* Pods_Skbkontur.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF754B5351B975FEB48EFD3F /* Pods_Skbkontur.framework */; };
+		925CAC0722B8B2DC007C6473 /* LoadFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925CAC0622B8B2DC007C6473 /* LoadFactory.swift */; };
+		925CAC0922B8B355007C6473 /* GlobalFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925CAC0822B8B355007C6473 /* GlobalFunc.swift */; };
 		925ECF2422B0DD4200CDBFA8 /* PhoneNumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925ECF2322B0DD4200CDBFA8 /* PhoneNumberCell.swift */; };
 		925ECF2622B0DD6100CDBFA8 /* BiographyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925ECF2522B0DD6100CDBFA8 /* BiographyCell.swift */; };
 		925ECF2822B0DD8700CDBFA8 /* MainInformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925ECF2722B0DD8700CDBFA8 /* MainInformationCell.swift */; };
@@ -35,6 +37,8 @@
 /* Begin PBXFileReference section */
 		018996B369B74FFC8C101B07 /* Pods-Skbkontur.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Skbkontur.release.xcconfig"; path = "Target Support Files/Pods-Skbkontur/Pods-Skbkontur.release.xcconfig"; sourceTree = "<group>"; };
 		72BF06C30EA1AFDB789098FC /* Pods-Skbkontur.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Skbkontur.debug.xcconfig"; path = "Target Support Files/Pods-Skbkontur/Pods-Skbkontur.debug.xcconfig"; sourceTree = "<group>"; };
+		925CAC0622B8B2DC007C6473 /* LoadFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFactory.swift; sourceTree = "<group>"; };
+		925CAC0822B8B355007C6473 /* GlobalFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunc.swift; sourceTree = "<group>"; };
 		925ECF2322B0DD4200CDBFA8 /* PhoneNumberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberCell.swift; sourceTree = "<group>"; };
 		925ECF2522B0DD6100CDBFA8 /* BiographyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiographyCell.swift; sourceTree = "<group>"; };
 		925ECF2722B0DD8700CDBFA8 /* MainInformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInformationCell.swift; sourceTree = "<group>"; };
@@ -169,6 +173,8 @@
 				92ADF49622B0CE7E0065B8DA /* Info.plist */,
 				92C900F122B0F459008A32B6 /* StorageManager.swift */,
 				92C9012322B4F35D008A32B6 /* Load.swift */,
+				925CAC0622B8B2DC007C6473 /* LoadFactory.swift */,
+				925CAC0822B8B355007C6473 /* GlobalFunc.swift */,
 			);
 			path = Skbkontur;
 			sourceTree = "<group>";
@@ -337,6 +343,8 @@
 				925ECF2422B0DD4200CDBFA8 /* PhoneNumberCell.swift in Sources */,
 				92C900F222B0F459008A32B6 /* StorageManager.swift in Sources */,
 				925ECF2822B0DD8700CDBFA8 /* MainInformationCell.swift in Sources */,
+				925CAC0722B8B2DC007C6473 /* LoadFactory.swift in Sources */,
+				925CAC0922B8B355007C6473 /* GlobalFunc.swift in Sources */,
 				925ECF2E22B0DDF700CDBFA8 /* MainVC.swift in Sources */,
 				92C900F022B0F101008A32B6 /* RealmModel.swift in Sources */,
 				92ADF48B22B0CE7B0065B8DA /* AppDelegate.swift in Sources */,

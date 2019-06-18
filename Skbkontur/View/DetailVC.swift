@@ -16,7 +16,7 @@ class DetailVC: UIViewController {
     //Обработчик нажатия на значок телефона
     @IBAction func phoneButton(_ sender: UIButton) {
         guard let viewModel = viewModel else {return}
-        viewModel.call()
+        GlobalFunc.call(phone: viewModel.getPersonPhone())
     }
 
 }
@@ -61,7 +61,7 @@ extension DetailVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let viewModel = viewModel else {return}
         viewModel.selectRow(atIndexPath: indexPath)
-        viewModel.call()
+        GlobalFunc.call(phone: viewModel.getPersonPhone())
     }
     
 }

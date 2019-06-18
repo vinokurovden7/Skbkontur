@@ -13,7 +13,7 @@ protocol TableViewViewModelType {
     
     func filteredPersons(searchText: String)
     
-    func fetchPerson(url: [String], reload: Bool, completion: @escaping (Bool)->())
+    func fetchPerson(url: [String], completion: @escaping ()->())
     
     func numberOfRows() -> Int
     func cellViewModel(forIndexPath indexPath: IndexPath) -> TableViewCellViewModelType?

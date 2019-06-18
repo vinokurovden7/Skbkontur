@@ -28,7 +28,7 @@ class DetailViewModel: DetailViewModelType{
     func viewModelForSelectedRow() {
         guard let selectedIndexPath = selectedIndexPath else {return}
         if selectedIndexPath.row == 1 {
-            call()
+            GlobalFunc.call(phone: person.phone)
         }
     }
     
@@ -36,11 +36,15 @@ class DetailViewModel: DetailViewModelType{
         self.selectedIndexPath = indexPath
     }
     
-    //Функция для совершения вызова
-    public func call(){
-        guard let url = URL(string: "tel://\(person.phone.replacingOccurrences(of: " ", with: ""))") else {return}
-        if UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        }
+    func getPersonPhone() -> String {
+        return person.phone
     }
+    
+//    //Функция для совершения вызова
+//    public func call(){
+//        guard let url = URL(string: "tel://\(person.phone.replacingOccurrences(of: " ", with: ""))") else {return}
+//        if UIApplication.shared.canOpenURL(url) {
+//            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+//        }
+//    }
 }
